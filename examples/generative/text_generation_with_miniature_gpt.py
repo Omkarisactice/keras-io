@@ -46,7 +46,7 @@ os.environ["KERAS_BACKEND"] = "tensorflow"
 
 import keras
 from keras import layers
-from keras import ops
+from keras import backend 
 from keras.layers import TextVectorization
 import numpy as np
 import os
@@ -164,7 +164,8 @@ generation task.
 
 """shell
 curl -O https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz
-tar -xf aclImdb_v1.tar.gz
+tar -xf aclImdb_v
+1.tar.gz
 """
 
 
@@ -309,6 +310,7 @@ text_gen_callback = TextGenerator(num_tokens_generated, start_tokens, vocab)
 ## Train the model
 
 Note: This code should preferably be run on GPU.
+
 """
 
 model = create_model()
